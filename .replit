@@ -16,7 +16,7 @@ for i in range(0,amnt):
     #asks user misc questions
     
     if ovsp <= 0:
-        print("this car is going under the speed limit")
+        print("{} is going under the speed limit" .format(name))
     
     elif ovsp <= 20:
         print("{} is driveing {}Kph over the speed limit and should get a 200$ fine" .format(name, ovsp))
