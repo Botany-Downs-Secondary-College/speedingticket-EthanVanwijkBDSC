@@ -1,2 +1,42 @@
-language = "python3"
-run = "python hello.py"
+#asks speed limit
+limit = int(input("what is the speed limit: "))
+criminal_list = []
+amnt = int(input("how many people would you like to add?"))
+
+for i in range(0,amnt):
+    
+    i = i - 1
+    #asks name and speed
+    name = input("whats the name of the person: ")
+    speed = int(input("how fast was this person driving: "))
+    
+    #calculates speed
+    ovsp = speed - limit
+    
+    #asks user misc questions
+    
+    if ovsp <= 0:
+        print("this car is going under the speed limit")
+    
+    elif ovsp <= 20:
+        print("{} is driveing {}Kph over the speed limit and should get a 200$ fine" .format(name, ovsp))
+        criminal_list.append(name)
+
+    elif ovsp <= 60:
+        print ("{} is driveing {}Kph over the speed limit and should lose their licence" .format(name, ovsp))
+        criminal_list.append(name)
+        #criminal_list.append(speed)
+        
+    elif ovsp <= 82 or ovsp > 82 and ovsp < 300:
+        print ("{} is driveing {}Kph over the speed limit and should go to jail" .format(name, ovsp))
+        criminal_list.append(name)
+    
+    else:
+        print("Invalid_speed: {}" .format(speed))
+    
+    
+    
+#ends program
+print("here is a list of the criminals you have added.")
+print(criminal_list)
+print("end")
